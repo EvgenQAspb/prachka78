@@ -42,3 +42,10 @@ next-env.d.ts
 
 # autopilot dashboard local server
 .autopilot/serve.*
+
+# local secrets / helper files (never commit)
+.github-token.txt
+.github_token.txt
+*.token
+.aux-devlog.txt
+.aux-*
