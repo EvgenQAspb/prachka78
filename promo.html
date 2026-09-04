@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Акции и бонусы — Городская прачечная 78</title>
+  <meta name="description" content="Акции и бонусная программа «Счастливые часы» прачечной «Городская прачечная 78»: до 3% бонусов с каждого заказа, с 09:00 до 15:00 — ещё больше." />
+  <meta property="og:title" content="Акции и бонусы — Городская прачечная 78" />
+  <meta property="og:description" content="Бонусная программа «Счастливые часы»: до 3% с заказа." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Городская прачечная 78 — главная">
+        <span class="logo__icon" aria-hidden="true">🧺</span>
+        <span>Городская прачечная 78</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="about.html">О нас</a></li>
+          <li><a class="nav__link" href="services.html">Услуги</a></li>
+          <li><a class="nav__link" href="prices.html">Цены</a></li>
+          <li><a class="nav__link is-active" href="promo.html" aria-current="page">Акции</a></li>
+          <li><a class="nav__link" href="reviews.html">Отзывы</a></li>
+          <li><a class="nav__link" href="gallery.html">Фото</a></li>
+          <li><a class="nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+79500398988" aria-label="Позвонить: +7 950 039-89-88">📞 +7 (950) 039-89-88</a>
+        <a class="header__msg" href="https://t.me/+79500398988" target="_blank" rel="noopener" aria-label="Написать в Telegram">✈️</a>
+        <a class="header__msg" href="https://wa.me/+79500398988" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">💬</a>
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="hero__badge promo-badge" style="margin-bottom:20px;">🎁 Действует акция</span>
+        <h1 class="page-hero__title">Акции и бонусы</h1>
+        <p class="page-hero__text">Копите бонусы с каждого заказа и оплачивайте ими следующие стирки.</p>
+      </div>
+    </section>
+
+    <!-- Бонусная программа -->
+    <section class="section">
+      <div class="container">
+        <div class="promo-card reveal">
+          <span class="promo-badge" style="font-size:2.5rem;">⏰</span>
+          <div class="promo-card__percent">до 3%</div>
+          <h3 class="promo-card__title">Счастливые часы</h3>
+          <p class="promo-card__text">За каждый заказ начисляется <strong>1%</strong> бонусных рублей</p>
+          <p class="promo-card__text">С <strong>09:00 до 15:00</strong> — дополнительно ещё <strong>+2%</strong></p>
+          <span class="promo-card__period">Акция действует: 20.01.2026 — 31.12.2026</span>
+          <div class="timer" id="promoTimer">
+            <div class="timer__label" style="font-weight:600;opacity:0.9;">До конца акции осталось</div>
+            <div class="timer__blocks">
+              <div class="timer__block"><div class="timer__num">00</div><div class="timer__label">дней</div></div>
+              <div class="timer__block"><div class="timer__num">00</div><div class="timer__label">часов</div></div>
+              <div class="timer__block"><div class="timer__num">00</div><div class="timer__label">минут</div></div>
+              <div class="timer__block"><div class="timer__num">00</div><div class="timer__label">секунд</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Условия -->
+    <section class="section section--tint">
+      <div class="container">
+        <h2 class="section__title reveal">Условия бонусной программы</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">💳</span>
+            <h3 class="card__title">1% с каждого заказа</h3>
+            <p class="card__text">За любой оплаченный заказ вам начисляется 1% от суммы в бонусных рублях.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">⏰</span>
+            <h3 class="card__title">+2% в «Счастливые часы»</h3>
+            <p class="card__text">Заказывайте с 09:00 до 15:00 и получайте дополнительно ещё 2% — итого 3% за заказ.</p>
+          </article>
+          <article class="card reveal">
+            <span class="card__icon" aria-hidden="true">🎁</span>
+            <h3 class="card__title">Бонусами можно оплачивать</h3>
+            <p class="card__text">Накопленные бонусные рубли можно использовать для оплаты следующих услуг.</p>
+          </article>
+        </div>
+        <div class="note mt-3 reveal">
+          Акция на стирку и чистку ковров не распространяется (программа партнёрская).
+          Подробности и точные условия уточняйте у администратора.
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center">
+      <div class="container">
+        <h2 class="section__title reveal">Успейте воспользоваться выгодой</h2>
+        <p class="section__subtitle reveal">Приезжайте в прачечную или звоните — расскажем обо всех бонусах.</p>
+        <div class="hero__cta reveal" style="justify-content:center;">
+          <a class="btn btn--primary btn--large" href="tel:+79500398988">Позвонить</a>
+          <a class="btn btn--blue btn--large" href="contacts.html">Как нас найти</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <span class="logo__icon" aria-hidden="true">🧺</span>
+            <span>Городская прачечная 78</span>
+          </div>
+          <p class="footer__text">Прачечная и химчистка в Санкт-Петербурге.<br />Стирка, сушка, глажка, химчистка одежды, ковров и обуви.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Разделы</h4>
+          <ul class="footer__list">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="prices.html">Цены</a></li>
+            <li><a href="promo.html">Акции</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="gallery.html">Фото</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Контакты</h4>
+          <ul class="footer__list">
+            <li>Санкт-Петербург, ул. Яхтенная, 28</li>
+            <li>Ежедневно 9:00–21:00</li>
+            <li><a href="tel:+79500398988">+7 (950) 039-89-88</a></li>
+          </ul>
+          <div class="socials mt-2">
+            <a href="https://t.me/+79500398988" target="_blank" rel="noopener" aria-label="Телеграм">✈️</a>
+            <a href="https://wa.me/+79500398988" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+            <a href="https://vk.ru/prachka78spb" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>© <span id="year">2026</span> Городская прачечная 78. Все права защищены.</p>
+        <p>ИП Клипачев И.В. · ОГРНИП 323784700192634 · ИНН 540543766407</p>
+        <p>Санкт-Петербург, ул. Яхтенная, д. 28, строение 1, помещение 32н</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

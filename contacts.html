@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Контакты — Городская прачечная 78</title>
+  <meta name="description" content="Контакты прачечной и химчистки «Городская прачечная 78»: Санкт-Петербург, Яхтенная улица, 28. Телефон +7 (950) 039-89-88. Ежедневно 9:00–21:00." />
+  <meta property="og:title" content="Контакты — Городская прачечная 78" />
+  <meta property="og:description" content="Адрес, телефон и мессенджеры. Ждём вас ежедневно 9:00–21:00." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Городская прачечная 78 — главная">
+        <span class="logo__icon" aria-hidden="true">🧺</span>
+        <span>Городская прачечная 78</span>
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Главная</a></li>
+          <li><a class="nav__link" href="about.html">О нас</a></li>
+          <li><a class="nav__link" href="services.html">Услуги</a></li>
+          <li><a class="nav__link" href="prices.html">Цены</a></li>
+          <li><a class="nav__link" href="promo.html">Акции</a></li>
+          <li><a class="nav__link" href="reviews.html">Отзывы</a></li>
+          <li><a class="nav__link" href="gallery.html">Фото</a></li>
+          <li><a class="nav__link is-active" href="contacts.html" aria-current="page">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+79500398988" aria-label="Позвонить: +7 950 039-89-88">📞 +7 (950) 039-89-88</a>
+        <a class="header__msg" href="https://t.me/+79500398988" target="_blank" rel="noopener" aria-label="Написать в Telegram">✈️</a>
+        <a class="header__msg" href="https://wa.me/+79500398988" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">💬</a>
+        <button class="burger" aria-label="Открыть меню" aria-expanded="false">
+          <span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Контакты</h1>
+        <p class="page-hero__text">Приезжайте, звоните или пишите в мессенджеры — мы на связи каждый день.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contacts-grid">
+        <!-- Контактная информация -->
+        <div class="contacts-list">
+          <div class="contact-item reveal">
+            <span class="contact-item__icon" aria-hidden="true">📍</span>
+            <div>
+              <div class="contact-item__label">Адрес</div>
+              <div class="contact-item__value">Санкт-Петербург, ул. Яхтенная, 28<br /><small style="color:var(--color-text-muted);">пересечение с ул. Оптиков</small></div>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <span class="contact-item__icon" aria-hidden="true">📞</span>
+            <div>
+              <div class="contact-item__label">Телефон</div>
+              <div class="contact-item__value"><a href="tel:+79500398988">+7 (950) 039-89-88</a></div>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <span class="contact-item__icon" aria-hidden="true">🕒</span>
+            <div>
+              <div class="contact-item__label">Режим работы</div>
+              <div class="contact-item__value">Ежедневно 9:00–21:00</div>
+            </div>
+          </div>
+          <div class="contact-item reveal">
+            <span class="contact-item__icon" aria-hidden="true">💬</span>
+            <div>
+              <div class="contact-item__label">Мессенджеры и соцсети</div>
+              <div class="contact-item__value">
+                <div class="socials" style="margin-top:8px;">
+                  <a href="https://t.me/+79500398988" target="_blank" rel="noopener" aria-label="Телеграм">✈️</a>
+                  <a href="https://wa.me/+79500398988" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+                  <a href="https://vk.ru/prachka78spb" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Форма -->
+        <div>
+          <form class="form reveal" novalidate>
+            <h3 style="margin-bottom:8px;">Задать вопрос</h3>
+            <p style="color:var(--color-text-muted);margin-bottom:12px;font-size:0.95rem;">Оставьте свои контакты — администратор свяжется с вами.</p>
+            <div class="form__group">
+              <label class="form__label" for="name">Ваше имя</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="Как к вам обращаться" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Телефон</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="message">Сообщение</label>
+              <textarea class="form__textarea" id="message" name="message" rows="4" placeholder="Чем можем помочь?"></textarea>
+            </div>
+            <button class="btn btn--primary btn--large" type="submit">Отправить</button>
+            <div class="form__success" role="status">Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Карта -->
+    <section class="section section--tint">
+      <div class="container">
+        <h2 class="section__title reveal">Как нас найти</h2>
+        <p class="section__subtitle reveal">Санкт-Петербург, Приморский район, ул. Яхтенная, 28 · пересечение с ул. Оптиков</p>
+        <div class="map reveal">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=30.240570%2C59.993350&z=16&text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%AF%D1%85%D1%82%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2028"
+            loading="lazy"
+            title="Городская прачечная 78 на карте"
+            aria-label="Карта: Яхтенная улица, 28"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__logo">
+            <span class="logo__icon" aria-hidden="true">🧺</span>
+            <span>Городская прачечная 78</span>
+          </div>
+          <p class="footer__text">Прачечная и химчистка в Санкт-Петербурге.<br />Стирка, сушка, глажка, химчистка одежды, ковров и обуви.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Разделы</h4>
+          <ul class="footer__list">
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="prices.html">Цены</a></li>
+            <li><a href="promo.html">Акции</a></li>
+            <li><a href="reviews.html">Отзывы</a></li>
+            <li><a href="gallery.html">Фото</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Контакты</h4>
+          <ul class="footer__list">
+            <li>Санкт-Петербург, ул. Яхтенная, 28</li>
+            <li>Ежедневно 9:00–21:00</li>
+            <li><a href="tel:+79500398988">+7 (950) 039-89-88</a></li>
+          </ul>
+          <div class="socials mt-2">
+            <a href="https://t.me/+79500398988" target="_blank" rel="noopener" aria-label="Телеграм">✈️</a>
+            <a href="https://wa.me/+79500398988" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+            <a href="https://vk.ru/prachka78spb" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__legal">
+        <p>© <span id="year">2026</span> Городская прачечная 78. Все права защищены.</p>
+        <p>ИП Клипачев И.В. · ОГРНИП 323784700192634 · ИНН 540543766407</p>
+        <p>Санкт-Петербург, ул. Яхтенная, д. 28, строение 1, помещение 32н</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
