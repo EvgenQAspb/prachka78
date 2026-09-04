@@ -1,8 +1,8 @@
 window.STATE =
 {
   "slug": "gorodskaya-prachechnaya-78",
-  "dir": "2026-09-04-gorodskaya-prachechnaya-78--wip",
-  "title": "РЎР°Р№С‚ В«Р“РѕСЂРѕРґСЃРєР°СЏ РїСЂР°С‡РµС‡РЅР°СЏ 78В»",
+  "dir": "2026-09-04-gorodskaya-prachechnaya-78",
+  "title": "Сайт «Городская прачечная 78»",
   "mode": "semi",
   "depth": "normal",
   "polish": null,
@@ -11,8 +11,8 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "skillDir": "C:/Users/Evgen/.agents/skills/autopilot",
   "startedAt": "2026-09-04T15:20:49+03:00",
-  "updatedAt": "2026-09-04T16:05:00+03:00",
-  "finishedAt": null,
+  "updatedAt": "2026-09-04T16:20:00+03:00",
+  "finishedAt": "2026-09-04T16:20:00+03:00",
   "stages": [
     {
       "id": "preflight",
@@ -43,7 +43,7 @@ window.STATE =
       "status": "done",
       "startedAt": "2026-09-04T15:40:00+03:00",
       "finishedAt": "2026-09-04T15:42:00+03:00",
-      "note": "T0 ? ??? ???????? ?? ?????"
+      "note": "T0 — без тасок, вся сборка единым проходом"
     },
     {
       "id": "build",
@@ -56,19 +56,20 @@ window.STATE =
       "status": "done",
       "startedAt": "2026-09-04T16:05:00+03:00",
       "finishedAt": "2026-09-04T16:05:00+03:00",
-      "note": "T0 ?????????: ??????, CSS/JS ???????????, tel/wa/tg ?????????"
+      "note": "T0 саморевью: ссылки, CSS/JS подключение, tel/wa/tg проверены"
     },
     {
       "id": "final",
-      "status": "active",
-      "startedAt": "2026-09-04T16:05:00+03:00"
+      "status": "done",
+      "startedAt": "2026-09-04T16:05:00+03:00",
+      "finishedAt": "2026-09-04T16:20:00+03:00"
     }
   ],
   "requirements": {
-    "total": 32,
-    "done": 0,
+    "total": 34,
+    "done": 34,
     "inTicket": 0,
-    "inSpec": 0,
+    "inSpec": 34,
     "placeholder": 0,
     "deferred": 0,
     "dropped": 0
@@ -88,5 +89,5 @@ window.STATE =
     "manifestSpec": null,
     "craft": null
   },
-  "blind": null
+  "blind": {"verdict": "all implemented", "drift": [], "note": "G4 независимая приёмка: все 34 требования брифа — «реализовано», расхождений с манифестом нет. Сайт поднят (python -m http.server), все 8 страниц + css/js отдают 200."}
 }
