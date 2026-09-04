@@ -226,7 +226,7 @@ export default function HomePage() {
               <div className="relative">
                 <div className="overflow-hidden rounded-[2.5rem] shadow-glow">
                   <Image
-                    src="https://placehold.co/800x600/d6f7f4/0abab5?text=%D0%9F%D1%80%D0%B0%D1%87%D0%B5%D1%87%D0%BD%D0%B0%D1%8F&font=montserrat"
+                    src="/gallery/hall.jpg"
                     alt="Прачечная и химчистка Городская прачечная 78"
                     width={800}
                     height={600}
