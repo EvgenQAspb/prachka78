@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6fbfb;
+  --foreground: #0f2c2b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Tiffany — доминирующая палитра */
+  --color-tiffany-50: #eefbfa;
+  --color-tiffany-100: #d6f7f4;
+  --color-tiffany-200: #aeece8;
+  --color-tiffany-300: #7bdcd6;
+  --color-tiffany-400: #45c6c0;
+  --color-tiffany-500: #0abab5;
+  --color-tiffany-600: #0a9a97;
+  --color-tiffany-700: #0d7a78;
+  --color-tiffany-800: #105e5d;
+  --color-tiffany-900: #123e3d;
+  --color-tiffany-950: #092728;
+
+  /* Глубокий тёмно-бирюзовый для текста/тёмных секций */
+  --color-ink-50: #eef2f2;
+  --color-ink-100: #d5dfdf;
+  --color-ink-200: #a9bdbd;
+  --color-ink-300: #7a9696;
+  --color-ink-400: #4f6e6e;
+  --color-ink-500: #2f4f4e;
+  --color-ink-600: #23403f;
+  --color-ink-700: #1b3332;
+  --color-ink-800: #142827;
+  --color-ink-900: #0f201f;
+  --color-ink-950: #081515;
+
+  /* Тёплый акцент (бонусы, CTA-подсветка) */
+  --color-accent-50: #fffbeb;
+  --color-accent-100: #fef3c7;
+  --color-accent-200: #fde68a;
+  --color-accent-300: #fcd34d;
+  --color-accent-400: #fbbf24;
+  --color-accent-500: #f59e0b;
+
+  /* Фоны-ореолы */
+  --color-mint: #e0f7f5;
+  --color-cream: #fffaf0;
+
+  --font-sans: var(--font-manrope);
+
+  --shadow-soft: 0 10px 40px -12px rgb(11 154 151 / 0.25);
+  --shadow-glass: 0 8px 32px -8px rgb(11 154 151 / 0.18);
+  --shadow-glow: 0 0 0 1px rgb(11 154 151 / 0.12), 0 20px 60px -20px rgb(11 154 151 / 0.35);
+
+  --radius-4xl: 2.5rem;
+}
+
+@theme {
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 2.4s ease-in-out infinite;
+  --animate-drift: drift 18s ease-in-out infinite alternate;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-blob: blob 16s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  @keyframes pulse-soft {
+    0%, 100% { box-shadow: 0 0 0 0 rgb(245 158 11 / 0.45); }
+    50% { box-shadow: 0 0 0 12px rgb(245 158 11 / 0); }
+  }
+  @keyframes drift {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(30px, -20px) scale(1.08); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes blob {
+    0%, 100% { border-radius: 40% 60% 60% 40% / 50% 40% 60% 50%; }
+    33% { border-radius: 60% 40% 50% 50% / 40% 60% 40% 60%; }
+    66% { border-radius: 45% 55% 40% 60% / 60% 45% 55% 40%; }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-tiffany-200);
+  color: var(--color-tiffany-950);
+}
+
+/* Плавный скролл и тонкий скроллбар */
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--color-tiffany-50); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-tiffany-300);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-tiffany-400); }

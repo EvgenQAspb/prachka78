@@ -83,54 +83,59 @@
 # Сайт «Городская прачечная 78»
 
 Многостраничный промо-сайт (8 страниц) для прачечной/химчистки в Санкт-Петербурге.
-Чистый HTML5 + CSS3 + Vanilla JS, без сборки, без фреймворков и бэкенда.
+Стек: **Next.js 16 (App Router) + TypeScript + Tailwind CSS v4 + React 19**. Без бэкенда.
 Аудитория — клиенты с мобильных (прямые ссылки из Telegram/WhatsApp), адаптивность обязательна.
+Доминирующий цвет — тиффани (`#0abab5`).
 
 ## Команды
 
 | Команда | Что делает |
 |---------|------------|
-| открыть `index.html` | Просто открыть в браузере — без установки и сборки |
-| `python3 -m http.server` (в корне) | Локальный сервер для просмотра страниц, если нужен HTTP |
+| `npm run dev` | Режим разработки (http://localhost:3000) |
+| `npm run build` | Продакшен-сборка (включает typecheck) |
+| `npm run start` | Запуск собранного сайта |
+| `npm run lint` | Проверка ESLint |
 
-Сборки/линтера/тестов нет — после правок просто переоткрой страницу в браузере.
-Проверка JS: `node --check js/script.js`.
+Windows: `npm`-команды запускать через `cmd /c "npm ..."` (PowerShell блокирует npm.ps1 политикой).
 
 ## Структура
 
 ```
 C:\site\
-├─ index.html      — главная (hero, цены, акции, отзывы)
-├─ about.html      — о нас
-├─ services.html   — услуги прачечной/химчистки
-├─ prices.html     — цены (реальные, из референс-PDF)
-├─ promo.html      — акции (таймер обратного отсчёта)
-├─ reviews.html    — отзывы
-├─ gallery.html    — галерея (плейсхолдеры, лайтбокс)
-├─ contacts.html   — контакты, карта, форма
-├─ css/style.css   — все стили, CSS Custom Properties
-├─ js/script.js    — весь интерактив и анимации
-└─ .autopilot/     — интерфейсы/спека/прогресс сборки (не трогать)
+├─ app/              — страницы App Router (в `app/<route>/page.tsx`)
+│  ├─ page.tsx       — главная (hero, услуги, почему мы, акция, отзывы, карта)
+│  ├─ about/ services/ prices/ promo/ reviews/ gallery/ contacts/
+│  ├─ layout.tsx     — корневой layout: хедер/футер, metadata, schema.org
+│  └─ globals.css    — тема Tailwind v4 (@theme), палитра тиффани, анимации
+├─ components/       — Header, Footer, PageHero, Reveal, Counter, GalleryGrid,
+│                      PromoTimer, ContactCTA, icons (SVG)
+├─ lib/              — данные: data.ts (контакты/отзывы), prices.ts (цены), gallery.ts
+├─ public/           — статика
+├─ css/ js/ *.html   — ЛЕГАСИ от первой статической версии, не используются (не удалять без запроса)
+└─ .autopilot/       — интерфейсы/спека/прогресс сборки (не трогать)
 ```
 
-Каждая HTML-страница автономна: подключает `css/style.css` и `js/script.js`, семантика (header/nav/main/section/footer).
+Стек-мод: всё на серверных компонентах по умолчанию; интерактив (`"use client"`) — Reveal,
+Counter, GalleryGrid, PromoTimer, Header, форма контактов.
 
 ## Ключевые решения (неочевидно, уже укусило)
 
-- **Данные вшиты в код.** Реальные контакты, цены, юр.реквизиты и режим работы захардкожены в HTML. Не «портировать из интерфейсов» — просто брать как есть: тел +7 (950) 039-89-88, ул. Яхтенная 28, ежедневно 9:00–21:00, VK vk.ru/prachka78spb, ИП Клипачев И.В., ОГРНИП 323784700192634, ИНН 540543766407.
-- **Фото — плейсхолдеры** placehold.co URL inline (например `https://placehold.co/600x400/3b82f6/ffffff?text=...`), локальных файлов изображений нет.
-- **Форма — UI без бэкенда.** `.form` при сабмите показывает `.form__success`, ничего никуда не отправляет.
-- **Все функции в JS с guard-checks** (проверяют наличие элементов), поэтому один `script.js` работает на всех страницах, даже если на конкретной странице нет соответствующего блока.
-- **Windows:** `python3` тут — `python.exe`; для сервера используй `python3 -m http.server` в корне без версии. Современный `node` есть (v26).
-- **Не менять стек.** Проект изначально задумывался на Next.js (см. правила выше вне маркеров), но фактически реализован на чистом HTML/CSS/JS — не переводить на фреймворки без явного запроса.
+- **Данные вшиты в `lib/`.** Реальные контакты, цены, юр.реквизиты — в `lib/data.ts` и `lib/prices.ts`
+  (тел +7 (950) 039-89-88, ул. Яхтенная 28, ежедневно 9:00–21:00, VK vk.ru/prachka78spb,
+  ИП Клипачев И.В., ОГРНИП 323784700192634, ИНН 540543766407). Не выдумывать новые.
+- **Цены — реальные, из референс-PDF** (в `lib/prices.ts`). Пометка «уточняйте по телефону» обязательна.
+- **Фотогалерея и фото — плейсхолдеры** placehold.co (remote pattern настроен в `next.config.ts`),
+  локальных изображений нет.
+- **Форма контактов — UI без бэкенда.** На сабмите показывает «Спасибо» (`sent`-состояние в
+  `app/contacts/page.tsx`), ничего никуда не отправляет.
+- **Tailwind v4 — CSS-first.** Палитра/анимации в `@theme` в `globals.css`, конфига `tailwind.config` нет.
+  Тиффани-палитра: `tiffany-50..950`, тёмная бирюза `ink-*`, тёплый акцент `accent-50..500`.
 
-## Интерактив (js/script.js)
+## Стили и анимация (app/globals.css)
 
-Бургер-меню (`.burger`/`.nav`), scroll-reveal через IntersectionObserver (`.reveal` → `.is-visible`), анимированные счётчики (`[data-count]`), parallax hero (`.hero__bg`), page-fade при переходе по `.html`, лайтбокс галереи (`.gallery__item`), форма (UI), таймер акции (`#promoTimer`, до 31.12.2026), год в футере (`#year`).
-
-## Стили (css/style.css)
-
-CSS Custom Properties в `:root`: `--color-primary: #1a56db`, `--color-accent: #f59e0b`, `--color-text: #1e293b`, `--color-bg: #f0f7ff`, плюс переменные теней/радиусов/контейнера/высоты хедера. Mobile-first, breakpoints 375px → 768px → 1440px.
+CSS Custom Properties + @theme: `--color-tiffany-500: #0abab5`, фон `#f6fbfb`, текст `#0f2c2b`.
+Анимации: `animate-fade-up`, `animate-float`, `animate-drift`, `animate-blob`, `animate-pulse-soft`
+(таймер/бейдж), scroll-reveal через `Reveal` (IntersectionObserver), `Counter` (запуск по скроллу).
 
 ## Как здесь работает Autopilot
 
