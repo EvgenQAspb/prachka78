@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PhoneIcon, TelegramIcon, WhatsAppIcon, VkIcon, PinIcon, ClockIcon } from "./icons";
+import { Cat } from "./Cat";
 
 const NAV = [
   { href: "/about", label: "О нас" },
@@ -27,6 +28,13 @@ export function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-tiffany-200">
               Прачечная и химчистка в Санкт-Петербурге. Стирка, сушка, глажка, химчистка одежды, ковров и обуви. Самообслуживание и оплата картой.
             </p>
+            <div className="mt-5 flex items-center gap-3 rounded-2xl bg-white/5 px-4 py-3">
+              <Cat className="h-12 w-12 shrink-0" label="Рыжий кот — талисман прачечной" />
+              <p className="text-xs leading-snug text-tiffany-200">
+                <span className="block font-bold text-white">Талисман прачечной</span>
+                Наш хвостатый друг и главный хранитель чистоты.
+              </p>
+            </div>
           </div>
 
           <div>

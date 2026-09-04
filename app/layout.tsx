@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { Cat } from "@/components/Cat";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -65,6 +66,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <div
+          className="pointer-events-none fixed bottom-4 right-4 z-40 hidden sm:block"
+          aria-hidden="true"
+        >
+          <Cat
+            className="h-16 w-16 opacity-90 drop-shadow-md"
+            label="Рыжий кот — талисман прачечной"
+          />
+        </div>
       </body>
     </html>
   );

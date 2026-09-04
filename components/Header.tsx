@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { MenuIcon, CloseIcon, PhoneIcon, TelegramIcon, WhatsAppIcon } from "./icons";
+import { Cat } from "./Cat";
 
 const NAV = [
   { href: "/", label: "Главная" },
@@ -60,7 +61,10 @@ export function Header() {
             <span className="block text-sm font-extrabold tracking-tight text-tiffany-900 sm:text-base">
               Городская прачечная 78
             </span>
-            <span className="block text-[11px] font-medium text-tiffany-600">Прачечная и химчистка · СПб</span>
+            <span className="flex items-center gap-1.5 text-[11px] font-medium text-tiffany-600">
+              <Cat className="h-4 w-4" label="Кот-талисман" />
+              Прачечная и химчистка · СПб
+            </span>
           </span>
         </Link>
 
