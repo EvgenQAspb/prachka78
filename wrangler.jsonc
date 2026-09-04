@@ -3,7 +3,6 @@
   "name": "prachka78",
   "compatibility_date": "2026-09-01",
   "assets": {
-    "directory": "./out",
-    "binding": "ASSETS"
+    "directory": "./out"
   }
 }
